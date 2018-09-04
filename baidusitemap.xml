@@ -4,27 +4,34 @@
 
     
   <url>
-    <loc>https://jiachengquan.github.io/2018/08/29/hello-world/</loc>
-    <lastmod>2018-08-29T08:33:55.019Z</lastmod>
+    <loc>https://jiachengquan.github.io/2018/09/04/lambda/</loc>
+    <lastmod>2018-09-04T07:56:06.206Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2018-08-29T08:33:55.022Z</pubTime>
+        <title>Lambda表达式</title>
+        <pubTime>2018-09-04T07:56:06.210Z</pubTime>
         
+        <tag>java8</tag>
+         
+        <tag>lambda</tag>
+         
          
            
+             
+              <breadCrumb title="java" url="https://jiachengquan.github.io/categories/java/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://jiachengquan.github.io/2018/08/29/first/</loc>
-    <lastmod>2018-08-29T08:32:09.059Z</lastmod>
+    <loc>https://jiachengquan.github.io/2018/08/31/first/</loc>
+    <lastmod>2018-08-31T07:39:45.771Z</lastmod>
     <data>
         <display>
         <title>First</title>
-        <pubTime>2018-08-29T08:32:09.076Z</pubTime>
+        <pubTime>2018-08-31T07:39:45.780Z</pubTime>
         
         <tag>诗词</tag>
          
@@ -38,6 +45,21 @@
     </url>
 
     
+    
+  <url>
+    <loc>https://jiachengquan.github.io/2018/08/29/hello-world/</loc>
+    <lastmod>2018-08-29T08:33:55.019Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-08-29T08:33:55.022Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
     
     
     
