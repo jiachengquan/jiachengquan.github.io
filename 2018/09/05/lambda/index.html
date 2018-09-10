@@ -81,7 +81,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java8,lambda," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="一蓑烟雨任平生">
-<meta name="keywords" content="java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="随笔">
-<meta property="og:url" content="https://jiachengquan.github.io/life/index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;“Lambda 表达式”(lambda expression)是一个匿名函数&amp;emsp;&amp;emsp;Java 8的一个大亮点是引入Lambda表达式，使用它设计的代码会更加简洁。当开发者在编写Lambda表达式时，也会随之被编译成一个函数式接口。 &amp;emsp;&amp;emsp;不采用Lambda的老方法：123456Runnable r1 = new Runnable()&amp;#12">
+<meta name="keywords" content="java8,lambda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lambda表达式">
+<meta property="og:url" content="https://jiachengquan.github.io/2018/09/05/lambda/index.html">
 <meta property="og:site_name" content="烟雨平生">
-<meta property="og:description" content="一蓑烟雨任平生">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;“Lambda 表达式”(lambda expression)是一个匿名函数&amp;emsp;&amp;emsp;Java 8的一个大亮点是引入Lambda表达式，使用它设计的代码会更加简洁。当开发者在编写Lambda表达式时，也会随之被编译成一个函数式接口。 &amp;emsp;&amp;emsp;不采用Lambda的老方法：123456Runnable r1 = new Runnable()&amp;#12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-31T07:32:40.484Z">
+<meta property="og:updated_time" content="2018-09-10T03:20:03.903Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随笔">
-<meta name="twitter:description" content="一蓑烟雨任平生">
+<meta name="twitter:title" content="Lambda表达式">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;“Lambda 表达式”(lambda expression)是一个匿名函数&amp;emsp;&amp;emsp;Java 8的一个大亮点是引入Lambda表达式，使用它设计的代码会更加简洁。当开发者在编写Lambda表达式时，也会随之被编译成一个函数式接口。 &amp;emsp;&amp;emsp;不采用Lambda的老方法：123456Runnable r1 = new Runnable()&amp;#12">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="https://jiachengquan.github.io/life/"/>
+  <link rel="canonical" href="https://jiachengquan.github.io/2018/09/05/lambda/"/>
 
 
 
 
 
-  <title>随笔 | 烟雨平生</title>
+  <title>Lambda表达式 | 烟雨平生</title>
   
 
 
@@ -310,33 +310,302 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jiachengquan.github.io/2018/09/05/lambda/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="咸鱼">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/webwxgeticon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟雨平生">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">随笔</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">Lambda表达式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">
+                2018-09-05
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-10T11:20:03+08:00">
+                2018-09-10
+              </time>
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/05/lambda/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/05/lambda/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/05/lambda/" class="leancloud_visitors" data-flag-title="Lambda表达式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,069
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>&emsp;&emsp;“Lambda 表达式”(lambda expression)是一个匿名函数<br>&emsp;&emsp;Java 8的一个大亮点是引入Lambda表达式，使用它设计的代码会更加简洁。当开发者在编写Lambda表达式时，也会随之被编译成一个函数式接口。</p>
+<p>&emsp;&emsp;不采用Lambda的老方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Runnable r1 = <span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Running without Lambda"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>&emsp;&emsp;使用Lambda：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Runnable r2 = ()-&gt;&#123;</span><br><span class="line">    System.out.println(<span class="string">"Running from Lambda"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;正如所看到的，使用Lambda表达式不仅让代码变的简单、而且可读、最重要的是代码量也随之减少很多。然而，在某种程度上，这些功能在Scala等这些JVM语言里已经被广泛使用。<br><br>Lambda表达式的语法<br>(parameters) -&gt; expression<br>或<br>(parameters) -&gt;{ statements; }<br><br>lambda常见写法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 不传参数,返回值为 5  </span></span><br><span class="line">() -&gt; <span class="number">5</span>  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 2. 接收一个参数(数字类型),返回其2倍的值  </span></span><br><span class="line">x -&gt; <span class="number">2</span> * x  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 3. 接受2个参数(数字),并返回他们的差值  </span></span><br><span class="line">(x, y) -&gt; x – y  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 4. 接收2个int型整数,返回他们的和  </span></span><br><span class="line">(<span class="keyword">int</span> x, <span class="keyword">int</span> y) -&gt; x + y  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 5. 接受一个 string 类型参数,并在控制台打印,不返回任何值(看起来像是返回void)  </span></span><br><span class="line">(String s) -&gt; System.out.print(s)</span><br></pre></td></tr></table></figure></p>
+<p><strong>实例：</strong><br>数据准备：<br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Integer userId;</span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="keyword">private</span> Integer age;</span><br><span class="line">  <span class="keyword">private</span> Integer weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;User&gt; <span class="title">buildUserList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    User xiaoming = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">"xiaoming"</span>, <span class="number">28</span>, <span class="number">60</span>);</span><br><span class="line">    User xiaohong = <span class="keyword">new</span> User(<span class="number">2</span>, <span class="string">"xiaohong"</span>, <span class="number">22</span>, <span class="number">60</span>);</span><br><span class="line">    User xiaohuang = <span class="keyword">new</span> User(<span class="number">3</span>, <span class="string">"xiaohuang"</span>, <span class="number">21</span>, <span class="number">60</span>);</span><br><span class="line">    User xiaolan = <span class="keyword">new</span> User(<span class="number">4</span>, <span class="string">"xiaolan"</span>, <span class="number">25</span>, <span class="number">60</span>);</span><br><span class="line">    User xiaoqing = <span class="keyword">new</span> User(<span class="number">5</span>, <span class="string">"xiaoqing"</span>, <span class="number">19</span>, <span class="number">60</span>);</span><br><span class="line">    List&lt;User&gt; userList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    userList.add(xiaoming);</span><br><span class="line">    userList.add(xiaohong);</span><br><span class="line">    userList.add(xiaohuang);</span><br><span class="line">    userList.add(xiaolan);</span><br><span class="line">    userList.add(xiaoqing);</span><br><span class="line">    <span class="keyword">return</span> userList;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 循环遍历list普通写法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">normalLoopList</span><span class="params">(List&lt;User&gt; userList)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (User user : userList) &#123;</span><br><span class="line">    System.out.println(user); <span class="comment">// 已重写toString方法</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 循环遍历list，lambda写法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">lambdaLoopList</span><span class="params">(List&lt;User&gt; userList)</span> </span>&#123;</span><br><span class="line">  <span class="comment">//userList.forEach(user -&gt; System.out.println(user)); // 一般写法</span></span><br><span class="line">  userList.forEach(System.out::println); <span class="comment">// 精简写法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// list排序普通写法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">normalSortUserByAge</span><span class="params">(List&lt;User&gt; userList)</span></span>&#123;</span><br><span class="line">  Collections.sort(userList, <span class="keyword">new</span> Comparator&lt;User&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(User o1, User o2)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> o1.getAge() - o2.getAge();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  normalLoopList(userList);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// list排序lambda写法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">lambdaSortUserByAge</span><span class="params">(List&lt;User&gt; userList)</span></span>&#123;</span><br><span class="line">  Collections.sort(userList, (o1, o2) -&gt; o1.getAge() - o2.getAge());</span><br><span class="line">  lambdaLoopList(userList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如上述例子，lambda表达式可以把代码精简到一行。<br><strong>注：</strong></p>
+<blockquote>
+<p>:: 为java方法引用的标准形式，格式为：类名::方法名，对象::方法名<br>注意是方法名，后面不能加”()”。一般用作lambda表达式  </p>
+</blockquote>
+<p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user -&gt; System.out.println(user)  等价于  System.out::println</span><br><span class="line">() -&gt; <span class="keyword">new</span> ArrayList()  等价于  ArrayList::<span class="keyword">new</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="FunctionalInterface"><a href="#FunctionalInterface" class="headerlink" title="@FunctionalInterface"></a>@FunctionalInterface</h2><p>&emsp;&emsp;标注为FunctionalInterface的接口被称为函数式接口，该接口只能定义一个抽象方法。如果一个接口只有一个方法，则编译器会认为这就是一个函数式接口。增加了 <strong>@FunctionalInterface</strong> 编辑器会进行编译校验。函数式接口要注意以下几点：</p>
+<blockquote>
+<ol>
+<li>有且仅有一个抽象方法</li>
+<li>允许定义default方法，接口中定义default方法为java8新特性</li>
+<li>允许定义静态方法</li>
+<li>允许定义重写从父类Object继承来的方法</li>
+<li>注解不是必须得，加上编译器校验当前接口是否是函数式接口，若不是，则会编译报错</li>
+</ol>
+</blockquote>
+<p><strong>任何可以接受一个函数式接口实例的地方，都可以用Lambda表达式。</strong> <br>上述例子中集合遍历、集合排序的方法源码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* List接口中的default方法</span></span><br><span class="line"><span class="comment">* Consumer为java8提供的函数式接口，并使用了<span class="doctag">@FunctionalInterface</span>注解</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEach</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> T&gt; action)</span> </span>&#123;</span><br><span class="line">    Objects.requireNonNull(action);</span><br><span class="line">    <span class="keyword">for</span> (T t : <span class="keyword">this</span>) &#123;</span><br><span class="line">        action.accept(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Collections类的静态方法</span></span><br><span class="line"><span class="comment">* Comparator使用了<span class="doctag">@FunctionalInterface</span>注解</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(List&lt;T&gt; list, Comparator&lt;? <span class="keyword">super</span> T&gt; c)</span> </span>&#123;</span><br><span class="line">    list.sort(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;java8新提供的java.util.Function包下都为使用@FunctionalInterface注解的函数式接口。java8新特性stream也借助lambda及函数式接口。接口中的抽象方法有的是有返回值的，如java.util.function.Predicate<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Stream的filter方法参数即为Predicate接口。filter能对流进行过滤依赖于Predicate的test方法。</p>
+
       
     </div>
     
     
     
+    <div>
+      
+        <div>
+  
+    <div style="text-align:center;color:#ccc;font-size:14px;">----------------本文结束<i class="fa fa-paw"></i>感谢您的阅读---------------</div>
+  
+</div>
+
+      
+    </div>
+`   <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/09/05/lambda/">Lambda表达式</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 咸鱼 的个人博客">咸鱼</a></p>
+  <p><span>原始链接:</span><a href="/2018/09/05/lambda/" title="Lambda表达式">https://jiachengquan.github.io/2018/09/05/lambda/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jiachengquan.github.io/2018/09/05/lambda/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java8/" rel="tag"><i class="fa fa-tag"></i> java8</a>
+          
+            <a href="/tags/lambda/" rel="tag"><i class="fa fa-tag"></i> lambda</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/31/first/" rel="next" title="First">
+                <i class="fa fa-chevron-left"></i> First
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/10/stream/" rel="prev" title="Stream">
+                Stream <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -345,6 +614,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
 
         </div>
@@ -366,8 +642,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -452,6 +737,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FunctionalInterface"><span class="nav-number">1.</span> <span class="nav-text">@FunctionalInterface</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
