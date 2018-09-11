@@ -98,11 +98,11 @@
 <meta name="keywords" content="java8,stream">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stream">
-<meta property="og:url" content="https://jiachengquan.github.io/2018/09/10/stream/index.html">
+<meta property="og:url" content="https://jiachengquan.github.io/2018/09/09/stream/index.html">
 <meta property="og:site_name" content="烟雨平生">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;Java 8 API添加了一个新的抽象称为流Stream，可以让你以一种声明的方式处理数据，是支持顺序和并行聚合操作的元素序列。除了Stream(对象引用的流)之外，还有IntStream、LongStream和DoubleStream的对于基本数据类型的stream，所有这些都被称为“streams”。   数据源：数组，集合，生成器函数，I / O通道 处理聚合操作：f">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-10T03:20:42.737Z">
+<meta property="og:updated_time" content="2018-09-11T11:47:42.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stream">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;Java 8 API添加了一个新的抽象称为流Stream，可以让你以一种声明的方式处理数据，是支持顺序和并行聚合操作的元素序列。除了Stream(对象引用的流)之外，还有IntStream、LongStream和DoubleStream的对于基本数据类型的stream，所有这些都被称为“streams”。   数据源：数组，集合，生成器函数，I / O通道 处理聚合操作：f">
@@ -135,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="https://jiachengquan.github.io/2018/09/10/stream/"/>
+  <link rel="canonical" href="https://jiachengquan.github.io/2018/09/09/stream/"/>
 
 
 
@@ -331,7 +331,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jiachengquan.github.io/2018/09/10/stream/">
+    <link itemprop="mainEntityOfPage" href="https://jiachengquan.github.io/2018/09/09/stream/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="咸鱼">
@@ -360,8 +360,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T00:00:00+08:00">
-                2018-09-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-09T00:00:00+08:00">
+                2018-09-09
               </time>
             
 
@@ -376,8 +376,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-10T11:20:42+08:00">
-                2018-09-10
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-11T19:47:42+08:00">
+                2018-09-11
               </time>
             
           </span>
@@ -413,8 +413,8 @@ var _hmt = _hmt || [];
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/10/stream/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/10/stream/" itemprop="commentCount"></span>
+                <a href="/2018/09/09/stream/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/09/stream/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -422,7 +422,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/2018/09/10/stream/" class="leancloud_visitors" data-flag-title="Stream">
+             <span id="/2018/09/09/stream/" class="leancloud_visitors" data-flag-title="Stream">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,7 +447,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,789
+                  3,345
                 </span>
               
 
@@ -463,7 +463,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12
+                  14
                 </span>
               
             </div>
@@ -501,7 +501,8 @@ var _hmt = _hmt || [];
 <p>下方很多示例都依赖于此数据准备<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Integer userId;</span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="keyword">private</span> Integer age;</span><br><span class="line">  <span class="keyword">private</span> Integer weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;User&gt; <span class="title">buildUserList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    User xiaoming = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">"xiaoming"</span>, <span class="number">28</span>, <span class="number">60</span>);</span><br><span class="line">    User xiaohong = <span class="keyword">new</span> User(<span class="number">2</span>, <span class="string">"xiaohong"</span>, <span class="number">17</span>, <span class="number">60</span>);</span><br><span class="line">    User xiaohuang = <span class="keyword">new</span> User(<span class="number">3</span>, <span class="string">"xiaohuang"</span>, <span class="number">21</span>, <span class="number">60</span>);</span><br><span class="line">    User xiaolan = <span class="keyword">new</span> User(<span class="number">4</span>, <span class="string">"xiaolan"</span>, <span class="number">25</span>, <span class="number">60</span>);</span><br><span class="line">    User xiaoqing = <span class="keyword">new</span> User(<span class="number">5</span>, <span class="string">"xiaoqing"</span>, <span class="number">19</span>, <span class="number">60</span>);</span><br><span class="line">    List&lt;User&gt; userList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    userList.add(xiaoming);</span><br><span class="line">    userList.add(xiaohong);</span><br><span class="line">    userList.add(xiaohuang);</span><br><span class="line">    userList.add(xiaolan);</span><br><span class="line">    userList.add(xiaoqing);</span><br><span class="line">    <span class="keyword">return</span> userList;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="生成流"><a href="#生成流" class="headerlink" title="生成流"></a>生成流</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span>&lt;T&gt; Stream&lt;T&gt; <span class="title">of</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> StreamSupport.stream(<span class="keyword">new</span> Streams.StreamBuilderImpl&lt;&gt;(t), <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span>&lt;T&gt; Stream&lt;T&gt; <span class="title">of</span><span class="params">(T... values)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Arrays.stream(values);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;Stream提供了两个重载方法来生成流。集合等(如：Collection、List)提供了stream()方法来构造流。还可以通过java.util.Spliterator接口自己来构建流<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可变参数</span></span><br><span class="line">Stream stream = Stream.of(<span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"b"</span>);</span><br><span class="line"><span class="comment">// 数组</span></span><br><span class="line">String[] arr = &#123;<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>&#125;;</span><br><span class="line">stream = Stream.of(arr);</span><br><span class="line"><span class="comment">// 集合</span></span><br><span class="line">List&lt;String&gt; list = Arrays.asList(arr);</span><br><span class="line">stream = list.stream();</span><br><span class="line">stream = Stream.of(list); <span class="comment">// 和一行是有区别的。这里会把整个list当成一个元素</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;Stream提供了两个重载方法来生成流。集合等(如：Collection、List)提供了stream()方法来构造流。还可以通过java.util.Spliterator接口自己来构建流<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可变参数</span></span><br><span class="line">Stream stream = Stream.of(<span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"b"</span>);</span><br><span class="line"><span class="comment">// 数组</span></span><br><span class="line">String[] arr = &#123;<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>&#125;;</span><br><span class="line">stream = Stream.of(arr);</span><br><span class="line"><span class="comment">// 集合</span></span><br><span class="line">List&lt;String&gt; list = Arrays.asList(arr);</span><br><span class="line">stream = list.stream();</span><br><span class="line">stream = Stream.of(list); <span class="comment">// 和一行是有区别的。这里会把整个list当成一个元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成10个随机数</span></span><br><span class="line">Random seed = <span class="keyword">new</span> Random();</span><br><span class="line">Supplier&lt;Integer&gt; random = () -&gt; seed.nextInt();</span><br><span class="line">Stream.generate(random).limit(<span class="number">10</span>).forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成连续有序的10个数字</span></span><br><span class="line">Stream.iterate(<span class="number">0</span>, n -&gt; n + <span class="number">1</span>).limit(<span class="number">10</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;generate方法返回无限顺序无序流，其中每个元素由提供的Supplier生成。一般用于常量、随机数流等。方法的参数是supplier接口的实例，可以自己实现Supplier接口来生成流。<br>&emsp;iterate方法通过定义初始元素及运算函数返回一个连续有序的的无限流。</p>
 <h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>&emsp;&emsp;返回由与给定谓词匹配的流的元素组成的流。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Stream的filter</span></span><br><span class="line"><span class="function">Stream&lt;T&gt; <span class="title">filter</span><span class="params">(Predicate&lt;? <span class="keyword">super</span> T&gt; predicate)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// filter方法参数类型</span></span><br><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;filter方法的参数为函数式接口java.util.function.Predicate。接口的抽象方法为返回值类型为boolean的test方法。可以看出filter的过滤依赖于test方法。<br>&emsp;示例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 年龄大于20的User </span></span><br><span class="line">userList.stream().filter(user -&gt; user.getAge() &gt; <span class="number">20</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
 <p>输出:</p>
@@ -518,7 +519,8 @@ var _hmt = _hmt || [];
 <p>&emsp;distinct去重是根据equals方法比较来的。而对于对象，需要重写equals方法才能达到去重的目的。选定特定的key进行去重，可以自定义方法distinctByKey来去重，distinctByKey去重依赖于对filter方法的应用及Map接口的putIfAbsent方法的应用。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">default</span> V <span class="title">putIfAbsent</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">    V v = get(key);</span><br><span class="line">    <span class="keyword">if</span> (v == <span class="keyword">null</span>) &#123;</span><br><span class="line">        v = put(key, value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;putIfAbsent方法和put方法的区别是，给定key存在时则返回key映射的value，并不就行替换。给定key不存在则返回null</p>
 <h3 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Stream&lt;T&gt; <span class="title">sorted</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function">Stream&lt;T&gt; <span class="title">sorted</span><span class="params">(Comparator&lt;? <span class="keyword">super</span> T&gt; comparator)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>&emsp;stream提供两个重载方法来处理排序。一个是按照自然顺序排序，同时流的元素要实现Comparable接口，否则会抛出java.lang.ClassCastException异常；一个时需要自己来定义比较器。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串排序</span></span><br><span class="line">List&lt;String&gt; strList = Arrays.asList(<span class="string">"h"</span>,<span class="string">"e"</span>,<span class="string">"l"</span>,<span class="string">"l"</span>,<span class="string">"o"</span>,<span class="string">"w"</span>,<span class="string">"o"</span>,<span class="string">"r"</span>,<span class="string">"l"</span>,<span class="string">"d"</span>);</span><br><span class="line">strList.stream().sorted().forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 会抛出java.lang.ClassCastException异常</span></span><br><span class="line">userList.stream().sorted().forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据user的年龄排序</span></span><br><span class="line">userList.stream().sorted((o1, o2) -&gt; o1.getAge() - o2.getAge()).forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;stream提供两个重载方法来处理排序。一个是按照自然顺序排序，同时流的元素要实现Comparable接口，否则会抛出java.lang.ClassCastException异常；一个时需要自己来定义比较器。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串排序</span></span><br><span class="line">List&lt;String&gt; strList = Arrays.asList(<span class="string">"h"</span>,<span class="string">"e"</span>,<span class="string">"l"</span>,<span class="string">"l"</span>,<span class="string">"o"</span>,<span class="string">"w"</span>,<span class="string">"o"</span>,<span class="string">"r"</span>,<span class="string">"l"</span>,<span class="string">"d"</span>);</span><br><span class="line">strList.stream().sorted().forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 会抛出java.lang.ClassCastException异常</span></span><br><span class="line">userList.stream().sorted().forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据user的年龄排序</span></span><br><span class="line">userList.stream().sorted((o1, o2) -&gt; o1.getAge() - o2.getAge()).forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出第一个元素</span></span><br><span class="line">Optional&lt;User&gt; first = userList.stream().sorted((o1, o2) -&gt; o1.getAge() - o2.getAge()).findFirst();</span><br><span class="line">System.out.println(first);</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;findFirst方法返回Optional类型的对象来描述此流的第一个元素。如果流没有经过排序，则可以返回任何元素。同样有findAny方法，返回流中不确定的某个元素</p>
 <h3 id="peek"><a href="#peek" class="headerlink" title="peek"></a>peek</h3><p>&emsp;返回一个由该流的元素组成的流，并在每个元素上执行提供的操作。此方法主要用于支持调试，您希望在元素流经管道中的某个点时查看这些元素。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Stream.of(<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"four"</span>)</span><br><span class="line">    .filter(e -&gt; e.length() &gt; <span class="number">3</span>)</span><br><span class="line">    .peek(e -&gt; System.out.println(<span class="string">"Filtered value: "</span> + e))</span><br><span class="line">    .map(String::toUpperCase)</span><br><span class="line">    .peek(e -&gt; System.out.println(<span class="string">"Mapped value: "</span> + e))</span><br><span class="line">    .collect(Collectors.toList());</span><br></pre></td></tr></table></figure></p>
 <p>输出</p>
 <blockquote>
@@ -539,6 +541,10 @@ var _hmt = _hmt || [];
 <h3 id="Match"><a href="#Match" class="headerlink" title="Match"></a>Match</h3><blockquote>
 <p>anyMatch: 返回该流中是否有元素符合Predicate。如果是返回true<br>allMatch: 返回该流中是否所有元素符合Predicate。如果是返回true<br>noneMatch: 返回该流中是否所有元素不符合Predicate。如果是返回true<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是否有用户的年龄大于25，true</span></span><br><span class="line">userList.stream().anyMatch(user -&gt; user.getAge() &gt; <span class="number">25</span>);</span><br><span class="line"><span class="comment">// 是否所有用户的年龄大于25，false</span></span><br><span class="line">userList.stream().allMatch(user -&gt; user.getAge() &gt; <span class="number">25</span>);</span><br><span class="line"><span class="comment">// 是否没有用户的年龄大约100，true</span></span><br><span class="line">userList.stream().noneMatch(user -&gt; user.getAge() &gt; <span class="number">100</span>);</span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<h3 id="collect"><a href="#collect" class="headerlink" title="collect"></a>collect</h3><p>&emsp;对流元素就行reduction操作。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 得到user集合中所有用户的id</span></span><br><span class="line">List&lt;Integer&gt; userIdList = userList.stream().map(User::getUserId).collect(Collectors.toList());</span><br><span class="line"><span class="comment">// 以user的年龄进行分组</span></span><br><span class="line">Map&lt;Integer, List&lt;User&gt;&gt; userGroups = userList.stream().collect(Collectors.groupingBy(User::getAge));</span><br><span class="line"><span class="comment">// 未成年人和成年人分组</span></span><br><span class="line">Map&lt;Boolean, List&lt;User&gt;&gt; collect = userList.stream().collect(Collectors.partitioningBy(user -&gt; user.getAge() &gt; <span class="number">18</span>));</span><br><span class="line"><span class="comment">// key为id，value：user。</span></span><br><span class="line">Map&lt;Integer, User&gt; collect = userList.stream().collect(Collectors.toMap(User::getUserId, user -&gt; user));</span><br><span class="line"><span class="comment">// key为id，value：name</span></span><br><span class="line">Map&lt;Integer, String&gt; collect = userList.stream().collect(Collectors.toMap(User::getUserId, User::getName));</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;toMap方法可以根据要求任意组装map。有两个参数，第一个参数为map的key，不允许重复。否则会抛出java.lang.IllegalStateException: Duplicate key…………</p>
+<h3 id="parallel"><a href="#parallel" class="headerlink" title="parallel"></a>parallel</h3><p>&emsp;上面的例子基本都是串行流，即都是单线程执行的。stream还提供了并行流，即多线程执行操作。串行和并行流功能上并无差别，唯一差别在于单线程还是多线程执行流的遍历处理。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并行流</span></span><br><span class="line">userList.parallelStream(); <span class="comment">// 串行流为：userList.stream()</span></span><br><span class="line">Stream.of(<span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"b"</span>).parallel();</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;stream对于并行流只是对处理类AbstractPipeline中属性parallel赋值为true。从stream角度来看功能并无差别。parallel为true。AbstractPipeline会通过fork/join的方式来进行并行处理<br>&emsp;像limit、peek等方法在有序的并行流上使用可能会影响效率。</p>
 
       
     </div>
@@ -564,10 +570,10 @@ var _hmt = _hmt || [];
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/09/10/stream/">Stream</a></p>
+  <p><span>本文标题:</span><a href="/2018/09/09/stream/">Stream</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 咸鱼 的个人博客">咸鱼</a></p>
-  <p><span>原始链接:</span><a href="/2018/09/10/stream/" title="Stream">https://jiachengquan.github.io/2018/09/10/stream/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jiachengquan.github.io/2018/09/10/stream/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2018/09/09/stream/" title="Stream">https://jiachengquan.github.io/2018/09/09/stream/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jiachengquan.github.io/2018/09/09/stream/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -782,7 +788,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流的使用"><span class="nav-number">1.</span> <span class="nav-text">流的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成流"><span class="nav-number">1.1.</span> <span class="nav-text">生成流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">1.2.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">1.3.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#distinct"><span class="nav-number">1.4.</span> <span class="nav-text">distinct</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sorted"><span class="nav-number">1.5.</span> <span class="nav-text">sorted</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peek"><span class="nav-number">1.6.</span> <span class="nav-text">peek</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#limit-skip"><span class="nav-number">1.7.</span> <span class="nav-text">limit/skip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-forEachOrdered"><span class="nav-number">1.8.</span> <span class="nav-text">forEach/forEachOrdered</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toArray"><span class="nav-number">1.9.</span> <span class="nav-text">toArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">1.10.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Match"><span class="nav-number">1.11.</span> <span class="nav-text">Match</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流的使用"><span class="nav-number">1.</span> <span class="nav-text">流的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成流"><span class="nav-number">1.1.</span> <span class="nav-text">生成流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">1.2.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">1.3.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#distinct"><span class="nav-number">1.4.</span> <span class="nav-text">distinct</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sorted"><span class="nav-number">1.5.</span> <span class="nav-text">sorted</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peek"><span class="nav-number">1.6.</span> <span class="nav-text">peek</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#limit-skip"><span class="nav-number">1.7.</span> <span class="nav-text">limit/skip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-forEachOrdered"><span class="nav-number">1.8.</span> <span class="nav-text">forEach/forEachOrdered</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toArray"><span class="nav-number">1.9.</span> <span class="nav-text">toArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">1.10.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Match"><span class="nav-number">1.11.</span> <span class="nav-text">Match</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collect"><span class="nav-number">1.12.</span> <span class="nav-text">collect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parallel"><span class="nav-number">1.13.</span> <span class="nav-text">parallel</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -816,7 +822,7 @@ var _hmt = _hmt || [];
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.9k</span>
+    <span title="Site words total count">4.5k</span>
   
 </div>
 
